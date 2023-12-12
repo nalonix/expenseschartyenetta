@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+ <div class="card">
+  <header class="top-banner">
+    <div class="top-banner-left">
+      <p class="broken-white">
+        My balance
+      </p>
+      <h2>$921.48</h2>
+    </div>
+  </header>
+  <main>
+      <div class="heading">
+        <h2>Spending - Last 7 days</h2>
+      </div>
+      <div class="graph">
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="line"></div>
+      <div class="footing">
+<div class="footing-left">
+  <p class="light-gray">Total this month</p>
+  <h1>$478.33</h1>
+</div>
+<div class="footing-right">
+  <h3>+2.4%</h3>
+  <p class="light-gray">from last month</p>
+</div>
+ </div>
+  </main>
+ </div>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      datasets: [{
+        label: 'Expense',
+        data: [12, 19, 3, 7, 2, 4, 6],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>
+</html>
