@@ -41,9 +41,18 @@ body{
     background: var(--soft-red);
     border-radius:8px;
     color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .top-banner .top-banner-left{
     width: fit-content;
+    padding: 0.8rem;
+}
+.top-banner .top-banner-right{
+    display: flex;
+    align-items: center;
     padding: 0.8rem;
 }
 
